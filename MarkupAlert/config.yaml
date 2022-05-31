@@ -1,0 +1,24 @@
+SCOPES:
+  BIGQUERY:
+    - https://www.googleapis.com/auth/bigquery
+
+PROJECT_ID: nyo-yoptima
+DATASET: sdf_line_item
+
+MESSAGE_SERVICE:
+  EMAIL_ENDPOINT: https://us-west1-nyo-yoptima.cloudfunctions.net/send_alert_email
+  EMAIL_RECEIVER:
+      - yash@yoptima.com
+
+ALERT_CONFIGURATION:
+  SELECT:
+    - COLUMN: name 
+      ALIAS: Line_Item_ID
+    
+    - COLUMN: line_item_id
+      ALIAS: Line_Item
+
+  STATUS:
+    - Alert
+    - Draft
+  
